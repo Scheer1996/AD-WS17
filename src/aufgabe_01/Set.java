@@ -6,14 +6,14 @@ package aufgabe_01;
  * @version 1.0 - 28.09.2017
  *
  */
-public interface List<T> {
+public interface Set {
 
 	/**
 	 * Adds a new element to the list
 	 * @param elem
 	 * @return index where the element is stored
 	 */
-	public int add(T elem);
+	public int add(Elem elem);
 	
 	/**
 	 * Delete a element at a specific index
@@ -25,21 +25,21 @@ public interface List<T> {
 	 * Deleted a element with a specific key
 	 * @param key
 	 */
-	public void delete(T key);
+	public void delete(Key key);
 	
 	/**
 	 * Find a value in the list
 	 * @param key
 	 * @return return index of the the element or zero if no element was found
 	 */
-	public int find(int key);
+	public int find(Key key);
 	
 	/**
 	 * Retrieves a value from the list
 	 * @param index
 	 * @return the element
 	 */
-	public T retrieve(int index);
+	public Elem retrieve(int index);
 
 	/**
 	 * Puts out all data of the list in the console
@@ -59,6 +59,6 @@ public interface List<T> {
 	 * @param t another list
 	 * @return the new complete List
 	 */
-	public List<T> unify(List<T> s, List<T> t);
+	public Set unify(Set other);
 	
 }
