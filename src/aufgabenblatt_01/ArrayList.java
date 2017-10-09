@@ -1,6 +1,19 @@
-package aufgabe_01;
-
-public class ArrayList implements Set {
+package aufgabenblatt_01;
+/**
+ * Saving Elements in an Array whichs size gets doubled when there is no more space in the current Array
+ * 
+ * <br>
+ * Aufgabenblatt 1 - Aufgabe 1a
+ * 
+ * @author Philip Scheer <philip.scheer@haw-hamburg.de>
+ * @author Dennis Sentler <dennis.sentler@haw-hamburg.de>
+ * @author Paul Mathia <paul.mathia@haw-hamburg.de>
+ * @author Stefan Subotin <stefan.subotin@haw-hamburg.de>
+ * 
+ * @date 09.10.2017
+ *
+ */
+public class ArrayList<T> implements Set {
 
 	/**
 	 * start Size
@@ -24,7 +37,7 @@ public class ArrayList implements Set {
 	protected int count = 0;
 	
 	@Override
-	public int add(Elem elem) {
+	public int add(Elem<?> elem) {
 		// new array
 		if(count == data.length) {
 			// create new array
@@ -46,7 +59,7 @@ public class ArrayList implements Set {
 	}
 
 	@Override
-	public void delete(int index) {
+	public void deletePos(int index) {
 		// checking if index is out of bounds
 		if(index < 0 || index >= count) {
 			throw new IndexOutOfBoundsException("Index out of Bounds.");
@@ -73,16 +86,16 @@ public class ArrayList implements Set {
 	}
 
 	@Override
-	public void delete(Key key) {
+	public void deleteKey(Key key) {
 		int index = find(key);
-		delete(index);
+		deletePos(index);
 	}
 
 	@Override
 	public int find(Key key) {
 		for(int i = 0; i < count; i++) {
 			// check if elem key is equals to key
-			if(((Elem) data[i]).key.equals(key)) {
+			if(((Elem<?>) data[i]).getKey().equals(key)) {
 				return i;
 				//need to return position
 			}
@@ -92,7 +105,7 @@ public class ArrayList implements Set {
 	}
 
 	@Override
-	public Elem retrieve(int index) {
+	public Elem<?> retrieve(int index) {
 		// checking if index is out of bounds
 		if(index < 0 || index >= count) {
 			throw new IndexOutOfBoundsException("Index out of Bounds.");
@@ -101,14 +114,14 @@ public class ArrayList implements Set {
 		/**
 		 * unchecked cast is safe -> knowing that only Elements of type T exists in this array
 		 */
-		return (Elem) data[index];
+		return (Elem<?>) data[index];
 	}
 
 	@Override
 	public void showall() {
 		for(int i = 0; i < count; i++) {
-			Elem elem = (Elem) retrieve(i);
-			System.out.println(i+"\t- "+elem.key.toString()+"\t DATA: "+elem.data);
+			Elem<?> elem = (Elem<?>) retrieve(i);
+			System.out.println(i+"\t- "+elem.getKey().toString());
 		}
 	}
 
@@ -118,12 +131,24 @@ public class ArrayList implements Set {
 	}
 
 	@Override
-	public Set unify(Set other) {
-		for(int i = 0; i < other.size(); i++) {
-			add(other.retrieve(i));
+	public Set unify(Set s, Set t) {
+		Set unified = new ArrayList<T>();
+		
+		for(int i = 0; i < s.size(); i++) {
+			unified.add(s.retrieve(i));
+		}
+
+		for(int i = 0; i < t.size(); i++) {
+			unified.add(t.retrieve(i));
 		}
 		
-		return this;
+		return unified;
+	}
+
+	@Override
+	public int getActualPos() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

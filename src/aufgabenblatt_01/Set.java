@@ -1,9 +1,17 @@
-package aufgabe1;
+package aufgabenblatt_01;
 
 /**
  * Interface for diffrent Implentations
- * @author Philip Scheer, Dennis Sentler, Paul Mathia, Stefan.. 
- * @version 1.0 - 28.09.2017
+ * 
+ * <br>
+ * Aufgabenblatt 1 - Aufgabe 1
+ * 
+ * @author Philip Scheer <philip.scheer@haw-hamburg.de>
+ * @author Dennis Sentler <dennis.sentler@haw-hamburg.de>
+ * @author Paul Mathia <paul.mathia@haw-hamburg.de>
+ * @author Stefan Subotin <stefan.subotin@haw-hamburg.de>
+ * 
+ * @date 09.10.2017
  *
  */
 public interface Set {
@@ -23,7 +31,7 @@ public interface Set {
 
 	/**
 	 * Deleted a element with a specific key
-	 * @param key
+	 * @param key Key of the Elment which should be deleted
 	 */
 	public void deleteKey(Key key);
 	

@@ -1,4 +1,18 @@
-package aufgabe1;
+package aufgabenblatt_01;
+/**
+ * Generic class Elem with a Key and an Element <T> with extra Prev and Next methods
+ * 
+ * <br>
+ * Aufgabenblatt 1 - Aufgabe 2b
+ * 
+ * @author Philip Scheer <philip.scheer@haw-hamburg.de>
+ * @author Dennis Sentler <dennis.sentler@haw-hamburg.de>
+ * @author Paul Mathia <paul.mathia@haw-hamburg.de>
+ * @author Stefan Subotin <stefan.subotin@haw-hamburg.de>
+ * 
+ * @date 09.10.2017
+ *
+ */
 
 public class ElemPrevNext<T> extends Elem<T>{
 	

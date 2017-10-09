@@ -1,4 +1,4 @@
-package aufgabe_01.b;
+package aufgabenblatt_01.archiv.dennisSentler;
 
 /**
  * Interface for diffrent Implentations
@@ -155,7 +155,22 @@ public class ArraySet<T extends Elem>
 	 */
 	public ArraySet<T> unify(ArraySet<T> s, ArraySet<T> t)
 	{
-		return null;
+		ArraySet<T> unified = new ArraySet<T>();
+		for(int i = 0; i < _ContainerArray.length; i++)
+		{
+			if(s.retrieve(i) != null)
+			{
+				unified.add(s.retrieve(i));
+			}
+		}
+		for(int j = 0; j < _ContainerArray.length; j++)
+		{
+			if(!(unified.contains(_ContainerArray[j].getElem().getKey()) && t.retrieve(j) != null))
+			{
+				unified.add(t.retrieve(j));
+			}
+		}
+		return unified;
 	}
 
 }

@@ -1,4 +1,4 @@
-package aufgabe_01;
+package aufgabenblatt_01.archiv.philipScheer;
 
 
 public class Key {

@@ -1,4 +1,4 @@
-package aufgabe_01.b;
+package aufgabenblatt_01.archiv.dennisSentler;
 
 public class Elem
 {

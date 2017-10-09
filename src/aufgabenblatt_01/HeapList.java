@@ -1,10 +1,20 @@
-package aufgabe_01;
+package aufgabenblatt_01;
+
 /**
- * Aufgabe 2.c)
- * @author Subotin
+ * Heap List
+ * 
+ * <br>
+ * Aufgabenblatt 1 - Aufgabe 2c
+ * 
+ * @author Philip Scheer <philip.scheer@haw-hamburg.de>
+ * @author Dennis Sentler <dennis.sentler@haw-hamburg.de>
+ * @author Paul Mathia <paul.mathia@haw-hamburg.de>
+ * @author Stefan Subotin <stefan.subotin@haw-hamburg.de>
+ * 
+ * @date 09.10.2017
  *
  */
-public class HeapList implements Set {
+public class HeapList<T> implements Set {
 	private HeapContainer start;
 	private HeapContainer end;
 	private int size;
@@ -16,7 +26,7 @@ public class HeapList implements Set {
 	}
 
 	@Override
-	public int add(Elem elem) {
+	public int add(Elem<?> elem) {
 		end.setNext(null);
 		//Endcontainer praepariert für das Ende der Suche
 		
@@ -36,7 +46,7 @@ public class HeapList implements Set {
 	}
 
 	@Override
-	public void delete(int index) {
+	public void deletePos(int index) {
 		end.setNext(end);
 		//end so vorbereitet, dass beliebiger index eingegeben werden kann, auch wenn die Liste kleiner ist, da Kreisverweis bei end
 		
@@ -56,16 +66,15 @@ public class HeapList implements Set {
 	}
 
 	@Override
-	public void delete(Key key) {
+	public void deleteKey(Key key) {
 		end.setNext(end);
-		end.setElement(new Elem());
-		end.getElement().key = key;
+		end.setElement(new Elem<String>("stopper", key));
 		// end so vorbereitet, dass Suche definitiv erfolg hat und schlussendlich dann nichts veraendert
 		
 		HeapContainer temp = start;
 		
 		// Bedingung ist erfüllt, wenn der Key des folgenden Containers der zu loeschende ist
-		while (!temp.getNext().getElement().key.equals(key)) {
+		while (!temp.getNext().getElement().getKey().equals(key)) {
 			temp = temp.getNext();
 		}
 		
@@ -80,15 +89,14 @@ public class HeapList implements Set {
 	@Override
 	public int find(Key key) {
 		end.setNext(null);
-		end.setElement(new Elem());
-		end.getElement().key = key;
+		end.setElement(new Elem<String>("stopper", key));
 		// end so vorbereitet, dass Suche definitiv erfolg hat
 		
 		HeapContainer temp = start;
 		int counter = 1;
 		// Start bei 1, da immer der naechste Container geprueft wird und nicht der Aktuelle
 		
-		while (!temp.getNext().getElement().key.equals(key)) {
+		while (!temp.getNext().getElement().getKey().equals(key)) {
 			temp = temp.getNext();
 			counter++;
 		}
@@ -106,7 +114,7 @@ public class HeapList implements Set {
 	}
 
 	@Override
-	public Elem retrieve(int index) {
+	public Elem<?> retrieve(int index) {
 		// Index out of bounds check
 		if (index > size) {
 			throw new IndexOutOfBoundsException("Index out of Bounds.");
@@ -132,7 +140,7 @@ public class HeapList implements Set {
 		int index = 1;
 		
 		while (temp.getNext().getNext() != null) {
-			System.out.println(index + "\t " + temp.getNext().getElement().key.toString() + "\t DATA: " + temp.getNext().getElement().data);
+			System.out.println(index + "\t " + temp.getNext().getElement().getKey().toString());
 		}
 
 	}
@@ -143,9 +151,15 @@ public class HeapList implements Set {
 	}
 
 	@Override
-	public Set unify(Set other) {
+	public Set unify(Set s, Set t) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int getActualPos() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

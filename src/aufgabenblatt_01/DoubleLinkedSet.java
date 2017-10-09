@@ -1,20 +1,21 @@
-package aufgabe1;
+package aufgabenblatt_01;
 
 import java.util.Arrays;
 
 /**
- * Implementation 1 (AUSZUG AUFGABENBLATT AD)
- * Speichern Sie die Elemente in einem Array von Container-Klassen. Die Container-
- * Klasse enthält je einen next- und previous-Index (Integer-Index im Array), sowie
- * das eigentliche Element vom Grundtyp. Die Reihenfolge der Elemente sollen durch
- * den next- und previous-Index sortiert sein. Für den Abbruch der Suche verwenden
- * Sie ein Stop-Element. Wird beim Hinzufügen die Array-Größe überschritten, muss
- * entsprechend vergrößert werden.
+ * Generic class Elem with a Key and an Element <T> with extra Prev and Next methods
  * 
- * @author Paul Mathia
- * @param <T>
+ * <br>
+ * Aufgabenblatt 1 - Aufgabe 2b
+ * 
+ * @author Philip Scheer <philip.scheer@haw-hamburg.de>
+ * @author Dennis Sentler <dennis.sentler@haw-hamburg.de>
+ * @author Paul Mathia <paul.mathia@haw-hamburg.de>
+ * @author Stefan Subotin <stefan.subotin@haw-hamburg.de>
+ * 
+ * @date 09.10.2017
+ *
  */
-
 public class DoubleLinkedSet<T> implements Set
 {
     // refers to the actual free position
