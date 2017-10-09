@@ -6,12 +6,12 @@ package aufgabenblatt_01;
  * <br>
  * Aufgabenblatt 1 - Aufgabe 1
  * 
- * @author Philip Scheer <philip.scheer@haw-hamburg.de>
- * @author Dennis Sentler <dennis.sentler@haw-hamburg.de>
- * @author Paul Mathia <paul.mathia@haw-hamburg.de>
- * @author Stefan Subotin <stefan.subotin@haw-hamburg.de>
+ * @author Philip Scheer - philip.scheer@haw-hamburg.de
+ * @author Dennis Sentler - dennis.sentler@haw-hamburg.de
+ * @author Paul Mathia - paul.mathia@haw-hamburg.de
+ * @author Stefan Subotin - stefan.subotin@haw-hamburg.de
  * 
- * @date 09.10.2017
+ * 09.10.2017
  *
  */
 public interface Set {

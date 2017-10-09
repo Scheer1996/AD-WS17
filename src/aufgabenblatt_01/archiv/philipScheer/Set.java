@@ -55,8 +55,7 @@ public interface Set {
 	
 	/**
 	 * Unify two lists together
-	 * @param s one list
-	 * @param t another list
+	 * @param other another list
 	 * @return the new complete List
 	 */
 	public Set unify(Set other);

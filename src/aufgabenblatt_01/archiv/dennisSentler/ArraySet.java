@@ -23,7 +23,7 @@ public class ArraySet<T extends Elem>
 	/**
 	 * Adds a new element to the list
 	 * 
-	 * @param elem
+	 * @param element
 	 * @return index where the element is stored
 	 */
 	public int add(T element)
