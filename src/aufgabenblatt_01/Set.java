@@ -21,13 +21,13 @@ public interface Set {
 	 * @param elem
 	 * @return index where the element is stored
 	 */
-	public int add(Elem<?> elem);
+	public Pos add(Elem<?> elem);
 	
 	/**
 	 * Delete a element at a specific index
 	 * @param index
 	 */
-	public void deletePos(int index);
+	public void deletePos(Pos<?> pos);
 
 	/**
 	 * Deleted a element with a specific key
@@ -40,14 +40,14 @@ public interface Set {
 	 * @param key
 	 * @return return index of the the element or zero if no element was found
 	 */
-	public int find(Key key);
+	public Pos<?> find(Key key);
 	
 	/**
 	 * Retrieves a value from the list
 	 * @param index
 	 * @return the element
 	 */
-	public Elem<?> retrieve(int index);
+	public Elem<?> retrieve(Pos<?> pos);
 
 	/**
 	 * Puts out all data of the list in the console
@@ -68,7 +68,4 @@ public interface Set {
 	 * @return the new complete List
 	 */
 	public Set unify(Set s, Set t);
-	
-	public int getActualPos();
-	
 }

@@ -11,134 +11,109 @@ package aufgabenblatt_01;
  * @author Paul Mathia - paul.mathia@haw-hamburg.de
  * @author Stefan Subotin - stefan.subotin@haw-hamburg.de
  * 
- * 09.10.2017
+ *         09.10.2017
  *
  */
 public class HeapList<T> implements Set {
 	private HeapContainer start;
 	private HeapContainer end;
 	private int size;
-	
-	public HeapList () {
+
+	public HeapList() {
 		end = new HeapContainer(null, null);
 		start = new HeapContainer(null, end);
 		size = 0;
 	}
 
 	@Override
-	public int add(Elem<?> elem) {
-		end.setNext(null);
-		//Endcontainer praepariert für das Ende der Suche
-		
-		HeapContainer temp = start;
-		int index = 1;
-		
-		// Bedingung ist erfüllt, wenn der naechste Container end ist
-		while (temp.getNext().getNext() != null) {
-			temp = temp.getNext();
-			index++;
+	public Pos add(Elem<?> elem) {
+		if (!find(elem.getKey()).isvalid()) {
+
+			end.setNext(null);
+			// Endcontainer praepariert für das Ende der Suche
+
+			HeapContainer temp = start;
+
+			// Bedingung ist erfüllt, wenn der naechste Container end ist
+			while (temp.getNext().getNext() != null) {
+				temp = temp.getNext();
+			}
+
+			HeapContainer newContainer = new HeapContainer(elem, temp.getNext());
+			temp.setNext(newContainer);
+			size++;
+			return new Pos<HeapContainer>(temp, true);
+		} else {
+			return find(elem.getKey());
 		}
-		
-		HeapContainer newContainer = new HeapContainer(elem, temp.getNext());
-		temp.setNext(newContainer);
-		size++;
-		return index;
 	}
 
 	@Override
-	public void deletePos(int index) {
-		end.setNext(end);
-		//end so vorbereitet, dass beliebiger index eingegeben werden kann, auch wenn die Liste kleiner ist, da Kreisverweis bei end
-		
-		int counter = 1;
-		// counter startet bei 1, damit temp beim Container vor dem zu loeschenden endet
-		HeapContainer temp = start;
-		
-		while (counter < index) {
-			counter++;
-			temp = temp.getNext();
+	public void deletePos(Pos pos) {
+		if (pos.isvalid()) {
+
+			HeapContainer temp = (HeapContainer) pos.getPointer();
+			temp.setNext(temp.getNext().getNext());
 		}
-		// temp ist nun der Container vor dem zu loeschenden Container
-		temp.setNext(temp.getNext().getNext());
-		size--;
-		end.setNext(null);
-		// Entfernen des Kreisverweises bei end
 	}
 
 	@Override
 	public void deleteKey(Key key) {
-		end.setNext(end);
-		end.setElement(new Elem<String>("stopper", key));
-		// end so vorbereitet, dass Suche definitiv erfolg hat und schlussendlich dann nichts veraendert
-		
-		HeapContainer temp = start;
-		
-		// Bedingung ist erfüllt, wenn der Key des folgenden Containers der zu loeschende ist
-		while (!temp.getNext().getElement().getKey().equals(key)) {
-			temp = temp.getNext();
-		}
-		
-		temp.setNext(temp.getNext().getNext());
-		size--;
-		
-		end.setNext(null);
-		end.setElement(null);
-		// end auf ausgangszustand zurücksetzen
+		deletePos(find(key));
 	}
 
 	@Override
-	public int find(Key key) {
+	public Pos find(Key key) {
 		end.setNext(null);
 		end.setElement(new Elem<String>("stopper", key));
 		// end so vorbereitet, dass Suche definitiv erfolg hat
-		
+
 		HeapContainer temp = start;
-		int counter = 1;
-		// Start bei 1, da immer der naechste Container geprueft wird und nicht der Aktuelle
-		
+
 		while (!temp.getNext().getElement().getKey().equals(key)) {
 			temp = temp.getNext();
-			counter++;
 		}
-		
-		// Prüfung, ob der gefundene Index der des end-Containers ist, d.h. kein Ergebnis gefunden wurde
-		if (temp.getNext().getNext() == null) {
-			counter = 0;
-		}
-		
+
+		boolean validity = temp.getNext().getNext() != null;
 		end.setNext(null);
 		end.setElement(null);
 		// end auf ausgangszustand zurücksetzen
-		
-		return counter;
+
+		return new Pos<HeapContainer>(temp, validity);
 	}
 
 	@Override
-	public Elem<?> retrieve(int index) {
+	public Elem<?> retrieve(Pos pos) {
 		// Index out of bounds check
-		if (index > size) {
-			throw new IndexOutOfBoundsException("Index out of Bounds.");
+		if (pos.isvalid()) {
+			if (pos.getPointer() instanceof Integer) {
+				int counter = 1;
+				// Start bei 1 da immer der folgende Container getestet wird
+				HeapContainer temp = start;
+
+				while (counter < (int)pos.getPointer()) {
+					temp = temp.getNext();
+				}
+
+				return temp.getNext().getElement();
+			}
+			else {
+				return ((HeapContainer)pos.getPointer()).getElement();
+			}
+			
 		}
 		
-		int counter = 1;
-		// Start bei 1 da immer der folgende Container getestet wird
-		HeapContainer temp = start;
-		
-		while (counter < index) {
-			temp = temp.getNext();
-		}
-		
-		return temp.getNext().getElement();
+		return null;
 	}
 
 	@Override
 	public void showall() {
 		end.setNext(null);
-		// end vorberietet als stopelement
-		
+		// end vorbereitet als stopelement
+
 		HeapContainer temp = start;
 		int index = 1;
-		
+
 		while (temp.getNext().getNext() != null) {
 			System.out.println(index + "\t " + temp.getNext().getElement().getKey().toString());
 		}
@@ -152,14 +127,16 @@ public class HeapList<T> implements Set {
 
 	@Override
 	public Set unify(Set s, Set t) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		Set unified = new HeapList<T>();
 
-	@Override
-	public int getActualPos() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+		for (int i = 0; i < s.size(); i++) {
+			unified.add(s.retrieve(new Pos<Integer>(i, true)));
+		}
 
+		for (int i = 0; i < t.size(); i++) {
+			unified.add(t.retrieve(new Pos<Integer>(i, true)));
+		}
+
+		return unified;
+	}
 }

@@ -13,176 +13,163 @@ import java.util.Arrays;
  * @author Paul Mathia - paul.mathia@haw-hamburg.de
  * @author Stefan Subotin - stefan.subotin@haw-hamburg.de
  * 
- * 09.10.2017
+ *         09.10.2017
  *
  */
-public class DoubleLinkedSet<T> implements Set
-{
-    // refers to the actual free position
-    private int actualPosition; 
+public class DoubleLinkedSet<T> implements Set {
+	// refers to the actual free position
+	private int actualPosition;
 
-    /*
-     * start size of the array
-     */
-    private final int START_SIZE = 3;
+	/*
+	 * start size of the array
+	 */
+	private final int START_SIZE = 3;
 
-    /*
-     * extension factor
-     */
-    private final int EXTENSION_FACTOR = 2;
+	/*
+	 * extension factor
+	 */
+	private final int EXTENSION_FACTOR = 2;
 
-    /*
-     * array for storing the data
-     */
-    private ElemPrevNext[] data;
+	/*
+	 * array for storing the data
+	 */
+	private ElemPrevNext[] data;
 
-    /*
-     * Number of elements stored
-     */
-    protected int setSize = 0;
-    
-    private int arrayLength; 
-    
+	/*
+	 * Number of elements stored
+	 */
+	protected int setSize = 0;
 
-    /*
-     * constructor
-     */
-    public DoubleLinkedSet()
-    {
-        setSize = 0;
-        actualPosition = 1; 
-        data = new ElemPrevNext[START_SIZE];
-        arrayLength = data.length; 
+	private int arrayLength;
 
-    }
+	/**
+	 * constructor
+	 */
+	public DoubleLinkedSet() {
+		setSize = 0;
+		actualPosition = 1;
+		data = new ElemPrevNext[START_SIZE];
+		arrayLength = data.length;
 
-    @Override
-    public int add(Elem<?> e) {
-      
-            if (actualPosition < data.length)
-            {
-                data[actualPosition] = (ElemPrevNext) e;
-                data[actualPosition].setPreviousIndex(actualPosition - 1);
-                data[actualPosition].setNextIndex(actualPosition++);
-                setSize++;
+	}
 
-            } 
-            else if (actualPosition >= data.length)
-            {
-                Elem<?>[] neuesArray;
-                neuesArray = Arrays.copyOf(data, data.length *EXTENSION_FACTOR );
-                data = (ElemPrevNext[]) neuesArray;
-                data[actualPosition] = (ElemPrevNext)e;
-                data[actualPosition].setPreviousIndex(actualPosition-1);
-                data[actualPosition].setNextIndex(actualPosition++);
-                setSize++;
-   
-            }
-        return actualPosition-1; 
-    }
+	@Override
+	public Pos<?> add(Elem<?> e) {
+		if (contains(e.getKey())) {
+			return find(e.getKey());
+		} else {
 
-    @Override
-    public void deletePos(int index) 
-    {
-        assert data[index] != null : "Vorbedingung verletzt data[index] != null";
-        assert (index >= 1) : "Vorbedingung verletzt index >= 1";
+			if (actualPosition < data.length) {
+				data[actualPosition] = (ElemPrevNext) e;
+				data[actualPosition].setPreviousIndex(actualPosition - 1);
+				data[actualPosition].setNextIndex(++actualPosition);
+				setSize++;
 
-        if (data[index - 1] != null)
-        {
-            data[index - 1].setNextIndex(index);
-        }
+			} else if (actualPosition >= data.length) {
+				Elem<?>[] neuesArray;
+				neuesArray = Arrays.copyOf(data, data.length * EXTENSION_FACTOR);
+				data = (ElemPrevNext[]) neuesArray;
+				data[actualPosition] = (ElemPrevNext) e;
+				data[actualPosition].setPreviousIndex(actualPosition - 1);
+				data[actualPosition].setNextIndex(++actualPosition);
+				setSize++;
 
-        if (data[index + 1] != null)
-        {
-            data[index + 1].setPreviousIndex(index-1);
-        }
-        data[index].setElement(null);
-        data[index] = null;
-        setSize--;
+			}
+			return new Pos<Integer>(actualPosition - 1, true);
+		}
+	}
 
-    }
+	private boolean contains(Key key) {
+		return find(key).isvalid();
+	}
 
-    @Override
-    public void deleteKey(Key key) {
-        // TODO Auto-generated method stub
-        int index = find(key);
-        deletePos(index);
-    }
+	@Override
+	public void deletePos(Pos<?> pos) {
+		int index = (int)pos.getPointer();
+		assert data[index] != null : "Vorbedingung verletzt data[index] != null";
+		assert (index >= 1) : "Vorbedingung verletzt index >= 1";
 
-    @Override
-    public int find(Key key) {
-        int index = actualPosition - 1;
-        data[0] = new ElemPrevNext<String>("stopper", new Key(0)); 
-        data[0].setKey(key);
-        while ((data[index] == null) || (data[index].getKey() != key))
-        {
-            index--;
-        }
-        return index;
-    }
+		if (data[index - 1] != null) {
+			data[index - 1].setNextIndex(index);
+		}
 
-    @Override
-    public Elem<?> retrieve(int index) 
-    {
-        Elem<?> retrieve = null;
-        if (isValidIndex(index))
-        {
-            retrieve = data[index];
-        }
-        return retrieve;
-    }
+		if (data[index + 1] != null) {
+			data[index + 1].setPreviousIndex(index - 1);
+		}
+		data[index].setElement(null);
+		data[index] = null;
+		setSize--;
 
-    @Override
-    public void showall() {
-        // TODO Auto-generated method stub
+	}
 
-    }
+	@Override
+	public void deleteKey(Key key) {
+		deletePos(find(key));
+	}
 
-    @Override
-    public int size() 
-    {
-        return setSize;
-    }
+	@Override
+	public Pos find(Key key) {
+		int index = actualPosition - 1;
+		data[0] = new ElemPrevNext<String>("stopper", new Key(0));
+		data[0].setKey(key);
+		while ((data[index] == null) || (data[index].getKey() != key)) {
+			index--;
+		}
+		boolean validity = index != 0;
+		return new Pos<Integer>(index, validity);
+	}
 
-    @Override
-    public Set unify(Set s, Set t) {
-        Set unified = new DoubleLinkedSet();
+	@Override
+	public Elem<?> retrieve(Pos pos) {
+		int index = (int)pos.getPointer();
+		Elem<?> retrieve = null;
+		if (isValidIndex(index)) {
+			retrieve = data[index];
+		}
+		return retrieve;
+	}
 
-        for (int i = s.getActualPos(); i > 0; i--)
-        {
-            if (s.retrieve(i) != null)
-            {
-                unified.add(s.retrieve(i));
-            }
-        }
-        for (int i = t.getActualPos(); i > 0; i--)
-        {
-            if (t.retrieve(i) != null)
-            {
-                unified.add(t.retrieve(i));
-            }
-        }
-        return unified;
-    }
+	@Override
+	public void showall() {
+		// TODO Auto-generated method stub
 
-    /**
-     * 
-     * @return actualPosition
-     */
-    @Override
-    public int getActualPos()
-    {
-        return actualPosition;
-    }
+	}
 
-    /**
-     * checks if the index is a valid position
-     * 
-     * @return true when the index is a valid position, otherwise false.
-     */
-    private boolean isValidIndex(int index)
-    {
-        return index >= 0 && index < actualPosition;
-    }
+	@Override
+	public int size() {
+		return setSize;
+	}
+
+	@Override
+	public Set unify(Set s, Set t) {
+		Set unified = new DoubleLinkedSet<T>();
+
+		for (int i = 0; i < s.size(); i++) {
+			unified.add(s.retrieve(new Pos<Integer>(i, true)));
+		}
+
+		for (int i = 0; i < t.size(); i++) {
+			unified.add(t.retrieve(new Pos<Integer>(i, true)));
+		}
+
+		return unified;
+	}
+
+	/**
+	 * 
+	 * @return actualPosition
+	 */
+	private int getActualPos() {
+		return actualPosition;
+	}
+
+	/**
+	 * checks if the index is a valid position
+	 * 
+	 * @return true when the index is a valid position, otherwise false.
+	 */
+	private boolean isValidIndex(int index) {
+		return index >= 0 && index < actualPosition;
+	}
 
 }
