@@ -7,19 +7,21 @@ import org.junit.Test;
 import aufgabenblatt_01.ArrayList;
 import aufgabenblatt_01.DoubleLinkedSet;
 import aufgabenblatt_01.Elem;
+import aufgabenblatt_01.HeapContainer;
+import aufgabenblatt_01.HeapList;
 import aufgabenblatt_01.Key;
 import aufgabenblatt_01.Pos;
 import aufgabenblatt_01.Set;
 
 
-public class SetTest
+public class TestHeapList
 {
-	DoubleLinkedSet<Elem<Integer>> _testSet;
+	HeapList<Elem<Integer>> _testSet;
 	
-	public SetTest()
+	public TestHeapList()
 	{
 		//_testSet = new ArrayList<Elem<Integer>>();
-		_testSet = new DoubleLinkedSet<Elem<Integer>>();
+		_testSet = new HeapList<Elem<Integer>>();
 	}
 	
 	@Test
@@ -51,20 +53,21 @@ public class SetTest
 	@Test
 	public void testeAddAndFind()
 	{
-		Set _testSetNeu = new DoubleLinkedSet<Elem<Integer>>();
+		HeapList _testSetNeu = new HeapList<Elem<Integer>>();
 		_testSetNeu.add(new Elem<Integer>(500 ,new Key(100)));
 	
-		Pos<Integer> pos = new Pos<Integer>(1, true);
+		Pos<HeapContainer> pos = new Pos<HeapContainer>(_testSetNeu.start, true);
 		
 		assertEquals(pos, _testSetNeu.find(new Key(100)));
-		assertNotEquals(0, _testSetNeu.find(new Key(101)));
+		assertNotEquals(new Pos<HeapContainer>(_testSetNeu.start, false), _testSetNeu.find(new Key(101)));
 	}
 	
 	@Test
 	public void testeAddAndDeletePos()
 	{
+		_testSet = new HeapList<Elem<Integer>>();
 		_testSet.add(new Elem<Integer>(10, new Key(100)));
-		assertNotEquals(new Pos<Integer>(0, false), _testSet.find(new Key(100)));
+		assertNotEquals(new Pos<HeapContainer>(_testSet.start, false), _testSet.find(new Key(100)));
 		
 		_testSet.deletePos(_testSet.find(new Key(100)));
 		assertEquals(new Pos<Integer>(0, false), _testSet.find(new Key(100)));

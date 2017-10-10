@@ -58,18 +58,19 @@ public class DoubleLinkedSet<T> implements Set {
 		if (contains(e.getKey())) {
 			return find(e.getKey());
 		} else {
-
-			if (actualPosition < data.length) {
-				data[actualPosition] = (ElemPrevNext) e;
+			ElemPrevNext<?> eNext = new ElemPrevNext(e.getElement(), e.getKey());
+			
+			if (actualPosition < data.length - 1) {
+				data[actualPosition] = (ElemPrevNext<?>) eNext;
 				data[actualPosition].setPreviousIndex(actualPosition - 1);
 				data[actualPosition].setNextIndex(++actualPosition);
 				setSize++;
 
-			} else if (actualPosition >= data.length) {
+			} else {
 				Elem<?>[] neuesArray;
 				neuesArray = Arrays.copyOf(data, data.length * EXTENSION_FACTOR);
 				data = (ElemPrevNext[]) neuesArray;
-				data[actualPosition] = (ElemPrevNext) e;
+				data[actualPosition] = (ElemPrevNext<?>) eNext;
 				data[actualPosition].setPreviousIndex(actualPosition - 1);
 				data[actualPosition].setNextIndex(++actualPosition);
 				setSize++;
@@ -110,9 +111,9 @@ public class DoubleLinkedSet<T> implements Set {
 	@Override
 	public Pos find(Key key) {
 		int index = actualPosition - 1;
-		data[0] = new ElemPrevNext<String>("stopper", new Key(0));
-		data[0].setKey(key);
-		while ((data[index] == null) || (data[index].getKey() != key)) {
+		data[0] = new ElemPrevNext<String>("stopper", key);
+		data[data.length - 1] = new ElemPrevNext<String>("stopper", new Key(key.getKey() + 1));
+		while (data[index] == null || !(data[index].getKey().equals(key))) {
 			index--;
 		}
 		boolean validity = index != 0;

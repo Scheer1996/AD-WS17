@@ -15,7 +15,7 @@ package aufgabenblatt_01;
  *
  */
 public class HeapList<T> implements Set {
-	private HeapContainer start;
+	public HeapContainer start;
 	private HeapContainer end;
 	private int size;
 
@@ -51,9 +51,9 @@ public class HeapList<T> implements Set {
 	@Override
 	public void deletePos(Pos pos) {
 		if (pos.isvalid()) {
-
 			HeapContainer temp = (HeapContainer) pos.getPointer();
 			temp.setNext(temp.getNext().getNext());
+			size--;
 		}
 	}
 

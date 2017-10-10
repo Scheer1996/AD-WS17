@@ -17,4 +17,28 @@ public class Pos<T> {
 	public boolean isvalid() {
 		return isValid;
 	}
+	
+	public boolean equals(Object obj) {
+        if (!(obj instanceof Pos)) 
+        {
+            return false;
+        }
+
+        Pos otherPos = (Pos) obj;
+        
+        if (!otherPos.isvalid() && !this.isvalid()) {
+        	return true;
+        }
+        
+        if (otherPos.isvalid() != this.isvalid()) {
+        	return false;
+        }
+        
+        if (otherPos.getPointer().getClass() != this.getPointer().getClass()) {
+        	return false;
+        }
+        
+        
+        return otherPos.getPointer() == this.getPointer();
+	}
 }
