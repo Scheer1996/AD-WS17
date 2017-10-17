@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path=""/>
+	<classpathentry excluding="doc/|doc/aufgabe_01/|doc/aufgabe_01/archiv/|doc/aufgabe_01/archiv/dennisSentler/|doc/aufgabe_01/archiv/philipScheer/|doc/aufgabe_01/test/|doc/aufgabenblatt_01/|doc/aufgabenblatt_01/archiv/|doc/aufgabenblatt_01/archiv/dennisSentler/|doc/aufgabenblatt_01/archiv/philipScheer/|doc/aufgabenblatt_01/test/|latex/|src/aufgabenblatt_01/test/|src/|src/aufgabenblatt_01/|src/aufgabenblatt_01/archiv/|src/aufgabenblatt_01/archiv/dennisSentler/|src/aufgabenblatt_01/archiv/philipScheer/|src/" kind="src" path=""/>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
