@@ -40,7 +40,7 @@ public class ArrayList<T> implements Set {
     /**
      * the counter to collect data about operations
      */
-    private Counter counter;
+    public Counter counter;
 
     public ArrayList() {
         this(new Counter());

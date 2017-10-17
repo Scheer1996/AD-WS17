@@ -9,9 +9,43 @@ public class Application {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		dataArrayList();
+		performanceArrayTest10powX(1);
+		performanceArrayTest10powX(2);
+		performanceArrayTest10powX(3);
+		performanceArrayTest10powX(4);
+		performanceArrayTest10powX(5);
+		
 	}
 	
+	public static void performanceArrayTest10powX(int pow)
+	{
+		int testrange = (int)Math.pow(10, pow);
+		
+		//INIT
+		ArrayList<Elem<Integer>> arrayList = newArray(testrange);
+		arrayList.deleteKey(new Key(0));
+		System.out.println("Erstes Element"+arrayList.counter.getCount());
+
+		arrayList = newArray(testrange);
+		arrayList.deleteKey(new Key(testrange/2));
+		System.out.println("Mittleres Element"+arrayList.counter.getCount());
+		
+		arrayList = newArray(testrange);
+		arrayList.deleteKey(new Key(testrange-1));
+		System.out.println("Letztes Element"+arrayList.counter.getCount());
+	}
+
+	private static ArrayList<Elem<Integer>> newArray(int size) {
+		Counter counter = new Counter();
+		ArrayList<Elem<Integer>> arrayList = new ArrayList<Elem<Integer>>(counter);
+		
+		
+		for(int h = 0; h < size; h++) {
+			arrayList.add(new Elem<Integer>(1, new Key(h)));
+		}
+		counter.reset();
+		return arrayList;
+	}
 	
 	public static void dataArrayList() {
 
