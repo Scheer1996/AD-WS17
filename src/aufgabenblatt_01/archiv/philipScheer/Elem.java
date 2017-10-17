@@ -1,4 +1,4 @@
-package src.aufgabenblatt_01.archiv.philipScheer;
+package aufgabenblatt_01.archiv.philipScheer;
 
 public class Elem {
 

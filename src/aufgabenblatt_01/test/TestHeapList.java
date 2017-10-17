@@ -1,17 +1,17 @@
-package src.aufgabenblatt_01.test;
+package aufgabenblatt_01.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import src.aufgabenblatt_01.ArrayList;
-import src.aufgabenblatt_01.DoubleLinkedSet;
-import src.aufgabenblatt_01.Elem;
-import src.aufgabenblatt_01.HeapContainer;
-import src.aufgabenblatt_01.HeapList;
-import src.aufgabenblatt_01.Key;
-import src.aufgabenblatt_01.Pos;
-import src.aufgabenblatt_01.Set;
+import aufgabenblatt_01.ArrayList;
+import aufgabenblatt_01.DoubleLinkedSet;
+import aufgabenblatt_01.Elem;
+import aufgabenblatt_01.HeapContainer;
+import aufgabenblatt_01.HeapList;
+import aufgabenblatt_01.Key;
+import aufgabenblatt_01.Pos;
+import aufgabenblatt_01.Set;
 
 
 public class TestHeapList

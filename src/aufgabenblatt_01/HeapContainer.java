@@ -1,7 +1,7 @@
-package src.aufgabenblatt_01;
+package aufgabenblatt_01;
 
-import src.aufgabenblatt_01.Elem;
-import src.aufgabenblatt_01.HeapContainer;
+import aufgabenblatt_01.Elem;
+import aufgabenblatt_01.HeapContainer;
 
 /**
  * Heap Container

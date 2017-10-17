@@ -1,4 +1,4 @@
-package src.aufgabenblatt_01;
+package aufgabenblatt_01;
 
 /**
  * Saving Elements in an Array whichs size gets doubled when there is no more
@@ -37,6 +37,29 @@ public class ArrayList<T> implements Set {
 	 */
 	protected int count = 0;
 
+    /**
+     * the counter to collect data about operations
+     */
+    private Counter counter;
+
+    public ArrayList() {
+        this(new Counter());
+    }
+
+    public ArrayList(Counter counter) {
+		
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        count = 0;
+		
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        data = new Object[START_SIZE];
+        this.counter = counter;
+    }
+    
 	@Override
 	public Pos<?> add(Elem<?> elem) {
 		// new array

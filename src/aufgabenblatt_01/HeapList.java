@@ -1,4 +1,4 @@
-package src.aufgabenblatt_01;
+package aufgabenblatt_01;
 
 /**
  * Heap List

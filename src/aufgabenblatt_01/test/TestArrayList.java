@@ -1,13 +1,13 @@
-package src.aufgabenblatt_01.test;
+package aufgabenblatt_01.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import src.aufgabenblatt_01.ArrayList;
-import src.aufgabenblatt_01.Elem;
-import src.aufgabenblatt_01.Key;
-import src.aufgabenblatt_01.Pos;
+import aufgabenblatt_01.ArrayList;
+import aufgabenblatt_01.Elem;
+import aufgabenblatt_01.Key;
+import aufgabenblatt_01.Pos;
 
 
 public class TestArrayList

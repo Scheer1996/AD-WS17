@@ -1,4 +1,4 @@
-package src.aufgabenblatt_01.archiv.dennisSentler;
+package aufgabenblatt_01.archiv.dennisSentler;
 
 /**
  * Interface for diffrent Implentations
