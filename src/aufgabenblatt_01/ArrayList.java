@@ -47,21 +47,15 @@ public class ArrayList<T> implements Set {
     }
 
     public ArrayList(Counter counter) {
-		
-        // PERFORMANCE COUNTER
-        counter.increment();
-        // PERFORMANCE COUNTER
-        count = 0;
-		
-        // PERFORMANCE COUNTER
-        counter.increment();
-        // PERFORMANCE COUNTER
-        data = new Object[START_SIZE];
         this.counter = counter;
     }
     
 	@Override
 	public Pos<?> add(Elem<?> elem) {
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		// new array
 		if (contains(elem)) {
 			if (count == data.length) {
@@ -71,12 +65,24 @@ public class ArrayList<T> implements Set {
 				// copy all existing elements to new array
 				System.arraycopy(data, 0, tmp, 0, data.length);
 
+				
+		        // PERFORMANCE COUNTER
+		        counter.incrementBy(2 * count);
+		        // PERFORMANCE COUNTER
 				data = tmp;
 			}
 
+	        // PERFORMANCE COUNTER
+	        counter.increment();
+	        // PERFORMANCE COUNTER
+	        
 			// add new element to data
 			data[count] = elem;
 
+	        // PERFORMANCE COUNTER
+	        counter.increment();
+	        // PERFORMANCE COUNTER
+	        
 			// increase count
 			count++;
 			return new Pos<Integer>(count, true);
@@ -86,15 +92,35 @@ public class ArrayList<T> implements Set {
 
 	@Override
 	public void deletePos(Pos<?> pos) {
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		// checking if index is out of bounds
 		int index = (int) pos.getPointer();
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		if (index < 0 || index >= count || !pos.isvalid()) {
 			throw new IndexOutOfBoundsException("Index out of Bounds.");
 		}
 
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		// decrease count
 		count--;
 
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		// item is on last position nothing todo
 		if (index == count) {
 			/**
@@ -107,6 +133,11 @@ public class ArrayList<T> implements Set {
 
 			// foreach element after pos.index -> move one forward
 			for (int i = index; i < count; i++) {
+
+		        // PERFORMANCE COUNTER
+		        counter.increment();
+		        // PERFORMANCE COUNTER
+		        
 				data[i] = data[i + 1];
 			}
 		}
@@ -114,27 +145,62 @@ public class ArrayList<T> implements Set {
 
 	@Override
 	public void deleteKey(Key key) {
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		Pos<?> pos = find(key);
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		deletePos(pos);
 	}
 
 	@Override
 	public Pos<?> find(Key key) {
 		for (int i = 0; i < count; i++) {
+
+	        // PERFORMANCE COUNTER
+	        counter.increment();
+	        // PERFORMANCE COUNTER
+	        
 			// check if elem key is equals to key
 			if (((Elem<?>) data[i]).getKey().equals(key)) {
+
+		        // PERFORMANCE COUNTER
+		        counter.increment();
+		        // PERFORMANCE COUNTER
+		        
 				Pos<Integer> output = new Pos<Integer>(i, true);
 				return output;
 				// need to return position
 			}
 		}
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		Pos<Integer> output = new Pos<Integer>(0, false);
 		return output;
 	}
 
 	@Override
 	public Elem<?> retrieve(Pos<?> pos) {
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		int index = (int) pos.getPointer();
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		// checking if index is out of bounds
 		if (index < 0 || index >= count || !pos.isvalid()) {
 			throw new IndexOutOfBoundsException("Index out of Bounds.");
@@ -150,6 +216,11 @@ public class ArrayList<T> implements Set {
 	@Override
 	public void showall() {
 		for (int i = 0; i < count; i++) {
+
+	        // PERFORMANCE COUNTER
+	        counter.increment();
+	        // PERFORMANCE COUNTER
+	        
 			Elem<?> elem = (Elem<?>) retrieve(new Pos<Integer>(i, true));
 			System.out.println(i + "\t- " + elem.getKey().toString());
 		}
@@ -157,18 +228,38 @@ public class ArrayList<T> implements Set {
 
 	@Override
 	public int size() {
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		return count;
 	}
 
 	@Override
 	public Set unify(Set s, Set t) {
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		Set unified = new ArrayList<T>();
 
 		for (int i = 0; i < s.size(); i++) {
+
+	        // PERFORMANCE COUNTER
+	        counter.increment();
+	        // PERFORMANCE COUNTER
+	        
 			unified.add(s.retrieve(new Pos<Integer>(i, true)));
 		}
 
 		for (int i = 0; i < t.size(); i++) {
+
+	        // PERFORMANCE COUNTER
+	        counter.increment();
+	        // PERFORMANCE COUNTER
+	        
 			unified.add(t.retrieve(new Pos<Integer>(i, true)));
 		}
 
@@ -176,6 +267,11 @@ public class ArrayList<T> implements Set {
 	}
 
 	private boolean contains(Elem<?> elem) {
+
+        // PERFORMANCE COUNTER
+        counter.increment();
+        // PERFORMANCE COUNTER
+        
 		return !(find(elem.getKey()).isvalid());
 	}
 }
