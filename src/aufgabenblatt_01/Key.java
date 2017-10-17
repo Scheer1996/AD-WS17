@@ -1,4 +1,4 @@
-package aufgabenblatt_01;
+package src.aufgabenblatt_01;
 /**
  * Represenation of an Unique Key for Elem 
  * 

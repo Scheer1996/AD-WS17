@@ -1,4 +1,4 @@
-package aufgabenblatt_01;
+package src.aufgabenblatt_01;
 
 /**
  * Interface for diffrent Implentations

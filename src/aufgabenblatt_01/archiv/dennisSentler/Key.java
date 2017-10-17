@@ -1,4 +1,4 @@
-package aufgabenblatt_01.archiv.dennisSentler;
+package src.aufgabenblatt_01.archiv.dennisSentler;
 
 public class Key
 {

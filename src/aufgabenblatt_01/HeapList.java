@@ -1,4 +1,4 @@
-package aufgabenblatt_01;
+package src.aufgabenblatt_01;
 
 /**
  * Heap List
@@ -93,12 +93,13 @@ public class HeapList<T> implements Set {
 
 				while (counter < (int)pos.getPointer()) {
 					temp = temp.getNext();
+					counter++;
 				}
 
 				return temp.getNext().getElement();
 			}
 			else {
-				return ((HeapContainer)pos.getPointer()).getElement();
+				return ((HeapContainer)pos.getPointer()).getNext().getElement();
 			}
 			
 		}

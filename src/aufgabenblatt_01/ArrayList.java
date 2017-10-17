@@ -1,4 +1,4 @@
-package aufgabenblatt_01;
+package src.aufgabenblatt_01;
 
 /**
  * Saving Elements in an Array whichs size gets doubled when there is no more
@@ -40,23 +40,25 @@ public class ArrayList<T> implements Set {
 	@Override
 	public Pos<?> add(Elem<?> elem) {
 		// new array
-		if (count == data.length) {
-			// create new array
-			Object[] tmp = new Object[(int) data.length * GROWTH_FACTOR];
+		if (contains(elem)) {
+			if (count == data.length) {
+				// create new array
+				Object[] tmp = new Object[(int) data.length * GROWTH_FACTOR];
 
-			// copy all existing elements to new array
-			System.arraycopy(data, 0, tmp, 0, data.length);
+				// copy all existing elements to new array
+				System.arraycopy(data, 0, tmp, 0, data.length);
 
-			data = tmp;
-		}
+				data = tmp;
+			}
 
-		// add new element to data
-		data[count] = elem;
+			// add new element to data
+			data[count] = elem;
 
-		// increase count
-		count++;
-
-		return new Pos<Integer>(count, true);
+			// increase count
+			count++;
+			return new Pos<Integer>(count, true);
+		} else
+			return find(elem.getKey());
 	}
 
 	@Override
@@ -109,15 +111,15 @@ public class ArrayList<T> implements Set {
 
 	@Override
 	public Elem<?> retrieve(Pos<?> pos) {
-		int index = (int)pos.getPointer();
+		int index = (int) pos.getPointer();
 		// checking if index is out of bounds
 		if (index < 0 || index >= count || !pos.isvalid()) {
 			throw new IndexOutOfBoundsException("Index out of Bounds.");
 		}
 
 		/**
-		 * unchecked cast is safe -> knowing that only Elements of type T exists in this
-		 * array
+		 * unchecked cast is safe -> knowing that only Elements of type T exists
+		 * in this array
 		 */
 		return (Elem<?>) data[index];
 	}
@@ -148,5 +150,9 @@ public class ArrayList<T> implements Set {
 		}
 
 		return unified;
+	}
+
+	private boolean contains(Elem<?> elem) {
+		return !(find(elem.getKey()).isvalid());
 	}
 }

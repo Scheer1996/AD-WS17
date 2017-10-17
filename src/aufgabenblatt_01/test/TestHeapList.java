@@ -1,17 +1,17 @@
-package aufgabenblatt_01.test;
+package src.aufgabenblatt_01.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import aufgabenblatt_01.ArrayList;
-import aufgabenblatt_01.DoubleLinkedSet;
-import aufgabenblatt_01.Elem;
-import aufgabenblatt_01.HeapContainer;
-import aufgabenblatt_01.HeapList;
-import aufgabenblatt_01.Key;
-import aufgabenblatt_01.Pos;
-import aufgabenblatt_01.Set;
+import src.aufgabenblatt_01.ArrayList;
+import src.aufgabenblatt_01.DoubleLinkedSet;
+import src.aufgabenblatt_01.Elem;
+import src.aufgabenblatt_01.HeapContainer;
+import src.aufgabenblatt_01.HeapList;
+import src.aufgabenblatt_01.Key;
+import src.aufgabenblatt_01.Pos;
+import src.aufgabenblatt_01.Set;
 
 
 public class TestHeapList
@@ -54,12 +54,12 @@ public class TestHeapList
 	public void testeAddAndFind()
 	{
 		HeapList _testSetNeu = new HeapList<Elem<Integer>>();
-		_testSetNeu.add(new Elem<Integer>(500 ,new Key(100)));
-	
-		Pos<HeapContainer> pos = new Pos<HeapContainer>(_testSetNeu.start, true);
 		
-		assertEquals(pos, _testSetNeu.find(new Key(100)));
-		assertNotEquals(new Pos<HeapContainer>(_testSetNeu.start, false), _testSetNeu.find(new Key(101)));
+		Pos<HeapContainer> pos =_testSetNeu.add(new Elem<Integer>(500 ,new Key(100)));
+	
+		Pos<HeapContainer> posFound = (Pos<HeapContainer>) _testSetNeu.find(new Key(100));
+		
+		assertEquals(pos, posFound);
 	}
 	
 	@Test
@@ -124,10 +124,6 @@ public class TestHeapList
 		_testSet.add(new Elem<Integer>(14, new Key(5)));
 		_testSet.add(new Elem<Integer>(15, new Key(6)));
 		_testSet.add(new Elem<Integer>(16, new Key(7)));
-		_testSet.add(new Elem<Integer>(17, new Key(8)));
-		_testSet.add(new Elem<Integer>(18, new Key(9)));
-		_testSet.add(new Elem<Integer>(19, new Key(10)));
-		_testSet.add(new Elem<Integer>(20, new Key(11)));
 
 		ArrayList<Elem<Integer>> _testSetZwei = new ArrayList<Elem<Integer>>();
 		
@@ -142,10 +138,14 @@ public class TestHeapList
 		_testSetZwei.add(new Elem<Integer>(18, new Key(9)));
 		_testSetZwei.add(new Elem<Integer>(19, new Key(10)));
 		_testSetZwei.add(new Elem<Integer>(20, new Key(11)));
+		_testSetZwei.add(new Elem<Integer>(20, new Key(12)));
+		_testSetZwei.add(new Elem<Integer>(20, new Key(13)));
+		_testSetZwei.add(new Elem<Integer>(20, new Key(14)));
+		_testSetZwei.add(new Elem<Integer>(20, new Key(15)));
 
 		ArrayList<Elem<Integer>> _testSetDrei = new ArrayList<Elem<Integer>>();
 		_testSetDrei = (ArrayList<Elem<Integer>>) _testSetDrei.unify(_testSet, _testSetZwei);
 		
-		assertEquals(_testSetDrei.size(), _testSet.size() + _testSetZwei.size());
+		assertEquals(15, _testSetDrei.size());
 	}
 }

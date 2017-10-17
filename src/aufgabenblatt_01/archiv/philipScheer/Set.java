@@ -1,4 +1,4 @@
-package aufgabenblatt_01.archiv.philipScheer;
+package src.aufgabenblatt_01.archiv.philipScheer;
 
 /**
  * Interface for diffrent Implentations
