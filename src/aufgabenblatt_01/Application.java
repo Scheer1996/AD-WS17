@@ -2,6 +2,8 @@ package aufgabenblatt_01;
 
 public class Application {
 
+	private static Pos mitte;
+	private static Pos ende;
 	private static double[] listSize = {10e1, 10e2, 10e3, 10e4, 10e5};
 	/**
 	 * 10^k testfälle k= 1-5
@@ -14,6 +16,8 @@ public class Application {
 		performanceCompareArrayList();
 		System.out.println("DoubleLinkedSet");
 		performanceCompareDoubleLinkedSet();
+		System.out.println("HeapList");
+		performanceCompareHeapList();
 		
 		
 		
@@ -139,6 +143,66 @@ public class Application {
 		System.out.println("  Letztes Element: "+dlSet.counter.getCount());
 	}
 	
+	private static void performanceCompareHeapList() {
+		System.out.println("DeleteKey:");
+		System.out.println("10e1");
+		performanceHeapTestDeleteKey10powX(1);
+		System.out.println("10e2");
+		performanceHeapTestDeleteKey10powX(2);
+		System.out.println("10e3");
+		performanceHeapTestDeleteKey10powX(3);
+		System.out.println("10e4");
+		performanceHeapTestDeleteKey10powX(4);
+		System.out.println("10e5");
+		performanceHeapTestDeleteKey10powX(5);
+		
+		System.out.println("DeletePos:");
+		System.out.println("10e1");
+		performanceHeapTestDeletePos10powX(1);
+		System.out.println("10e2");
+		performanceHeapTestDeletePos10powX(2);
+		System.out.println("10e3");
+		performanceHeapTestDeletePos10powX(3);
+		System.out.println("10e4");
+		performanceHeapTestDeletePos10powX(4);
+		System.out.println("10e5");
+		performanceHeapTestDeletePos10powX(5);
+	}
+	
+	public static void performanceHeapTestDeleteKey10powX(int pow)
+	{
+		int testrange = (int)Math.pow(10, pow);
+		
+		HeapList<Elem<Integer>> heapList = newHeapList(testrange);
+		heapList.deleteKey(new Key(0));
+		System.out.println("  Erstes Element: "+heapList.counter.getCount());
+
+		heapList = newHeapList(testrange);
+		heapList.deleteKey(new Key(testrange/2));
+		System.out.println("  Mittleres Element: "+heapList.counter.getCount());
+		
+		heapList = newHeapList(testrange);
+		heapList.deleteKey(new Key(testrange-1));
+		System.out.println("  Letztes Element: "+heapList.counter.getCount());
+	}
+
+	public static void performanceHeapTestDeletePos10powX(int pow)
+	{
+		int testrange = (int)Math.pow(10, pow);
+
+		HeapList<Elem<Integer>> arrayList = newHeapList(testrange);
+		arrayList.deletePos(new Pos<HeapContainer>(arrayList.start, true));
+		System.out.println("  Erstes Element: "+arrayList.counter.getCount());
+
+		arrayList = newHeapList(testrange);
+		arrayList.deletePos(mitte);
+		System.out.println("  Mittleres Element: "+arrayList.counter.getCount());
+		
+		arrayList = newHeapList(testrange);
+		arrayList.deletePos(ende);
+		System.out.println("  Letztes Element: "+arrayList.counter.getCount());
+	}
+	
 	private static ArrayList<Elem<Integer>> newArray(int size) {
 		Counter counter = new Counter();
 		ArrayList<Elem<Integer>> arrayList = new ArrayList<Elem<Integer>>(counter);
@@ -161,6 +225,20 @@ public class Application {
 		}
 		counter.reset();
 		return dlSet;
+	}
+	
+	private static HeapList<Elem<Integer>> newHeapList(int size) {
+		Counter counter = new Counter();
+		HeapList<Elem<Integer>> heapList = new HeapList<Elem<Integer>>(counter);
+		
+		
+		for(int h = 0; h < size; h++) {
+			heapList.add(new Elem<Integer>(1, new Key(h)));
+		}
+		mitte = heapList.find(new Key(size / 2));
+		ende = heapList.find(new Key(size - 1));
+		counter.reset();
+		return heapList;
 	}
 	
 	public static void dataArrayList() {
