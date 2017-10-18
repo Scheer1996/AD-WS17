@@ -85,7 +85,7 @@ public class ArrayList<T> implements Set {
 	        
 			// increase count
 			count++;
-			return new Pos<Integer>(count, true);
+			return new Pos<Integer>(count-1, true);
 		} else
 			return find(elem.getKey());
 	}

@@ -62,6 +62,7 @@ public class DoubleLinkedSet<T> implements Set {
 		actualPosition = 1;
 		data = new ElemPrevNext[START_SIZE];
 		arrayLength = data.length;
+		counter = new Counter();
 
 	}
 

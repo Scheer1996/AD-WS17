@@ -36,6 +36,7 @@ public class HeapList<T> implements Set {
 		end = new HeapContainer(null, null);
 		start = new HeapContainer(null, end);
 		size = 0;
+		counter = new Counter();
 	}
 
 	@Override
