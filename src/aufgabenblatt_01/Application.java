@@ -9,32 +9,67 @@ public class Application {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		performanceArrayTest10powX(1);
-		performanceArrayTest10powX(2);
-		performanceArrayTest10powX(3);
-		performanceArrayTest10powX(4);
-		performanceArrayTest10powX(5);
+		System.out.println("DeleteKey:");
+		System.out.println("10e1");
+		performanceArrayTestDeleteKey10powX(1);
+		System.out.println("10e2");
+		performanceArrayTestDeleteKey10powX(2);
+		System.out.println("10e3");
+		performanceArrayTestDeleteKey10powX(3);
+		System.out.println("10e4");
+		performanceArrayTestDeleteKey10powX(4);
+		System.out.println("10e5");
+		performanceArrayTestDeleteKey10powX(5);
+		
+		System.out.println("DeletePos:");
+		System.out.println("10e1");
+		performanceArrayTestDeletePos10powX(1);
+		System.out.println("10e2");
+		performanceArrayTestDeletePos10powX(2);
+		System.out.println("10e3");
+		performanceArrayTestDeletePos10powX(3);
+		System.out.println("10e4");
+		performanceArrayTestDeletePos10powX(4);
+		System.out.println("10e5");
+		performanceArrayTestDeletePos10powX(5);
+		
+		
 		
 	}
 	
-	public static void performanceArrayTest10powX(int pow)
+	public static void performanceArrayTestDeleteKey10powX(int pow)
 	{
 		int testrange = (int)Math.pow(10, pow);
 		
-		//INIT
 		ArrayList<Elem<Integer>> arrayList = newArray(testrange);
 		arrayList.deleteKey(new Key(0));
-		System.out.println("Erstes Element"+arrayList.counter.getCount());
+		System.out.println("  Erstes Element: "+arrayList.counter.getCount());
 
 		arrayList = newArray(testrange);
 		arrayList.deleteKey(new Key(testrange/2));
-		System.out.println("Mittleres Element"+arrayList.counter.getCount());
+		System.out.println("  Mittleres Element: "+arrayList.counter.getCount());
 		
 		arrayList = newArray(testrange);
 		arrayList.deleteKey(new Key(testrange-1));
-		System.out.println("Letztes Element"+arrayList.counter.getCount());
+		System.out.println("  Letztes Element: "+arrayList.counter.getCount());
 	}
 
+	public static void performanceArrayTestDeletePos10powX(int pow)
+	{
+		int testrange = (int)Math.pow(10, pow);
+
+		ArrayList<Elem<Integer>> arrayList = newArray(testrange);
+		arrayList.deletePos(new Pos<Integer>(0, true));
+		System.out.println("  Erstes Element: "+arrayList.counter.getCount());
+
+		arrayList = newArray(testrange);
+		arrayList.deletePos(new Pos<Integer>(testrange/2, true));
+		System.out.println("  Mittleres Element: "+arrayList.counter.getCount());
+		
+		arrayList = newArray(testrange);
+		arrayList.deletePos(new Pos<Integer>(testrange-1, true));
+		System.out.println("  Letztes Element: "+arrayList.counter.getCount());
+	}
 	private static ArrayList<Elem<Integer>> newArray(int size) {
 		Counter counter = new Counter();
 		ArrayList<Elem<Integer>> arrayList = new ArrayList<Elem<Integer>>(counter);
