@@ -51,97 +51,59 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
-
+\usepackage[utf8]{inputenc}
 \title{	
 \normalfont \normalsize 
-\textsc{Hochschule für Angewandte Wissenschaften Hamburg, Department Informatik} \\ [25pt] % Your university, school and/or department name(s)
+\textsc{Hochschule f\"ur Angewandte Wissenschaften Hamburg, Department Informatik} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Assignment Title \\ % The assignment title
+\huge ADP Praktikumsaufgabe \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
-\author{John Smith} % Your name
+\author{Stefan Subotin, Paul , Dennis Sentler & Philip Scheer} % Your name
 
 \date{\normalsize\today} % Today's date or a custom date
 
 \begin{document}
 
 \maketitle % Print the title
-
 %----------------------------------------------------------------------------------------
 %	PROBLEM 1
 %----------------------------------------------------------------------------------------
+Es wurden drei verschiedene Implementationen (ArrayList, DoubleLinkedSet und HeapList)  zu einem vorgegebenen Interface Set implementiert. \newline
+Jede Implementationen hat seine Vor- und Nachteile, durch Quantitative Tests sollen diese in einer Ausarbeitung hier dargestellt werden.
 
-\section{Problem title}
 
-\lipsum[2] % Dummy text
 
-\begin{align} 
-\begin{split}
-(x+y)^3 	&= (x+y)^2(x+y)\\
-&=(x^2+2xy+y^2)(x+y)\\
-&=(x^3+2x^2y+xy^2) + (x^2y+2xy^2+y^3)\\
-&=x^3+3x^2y+3xy^2+y^3
-\end{split}					
-\end{align}
+\section{Dokumentation der Tests}
 
-Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
+\subsection{testeSize}
+Fügt 10 Elemente zu hinzu und fragt danach die mit getSize() die Größe ab, die 10 entsprechen muss. \\
+Danach werden 10 weitere Elemente hinzugefügt und die Methode getSize() muss 20 zurückliefern.
 
-%------------------------------------------------
+\subsection{testeAddAndFind}
+Fügt ein Element e1 hinzu und erstellt eine Position p1 die auf das erste Element e1 verweist. Nun wird nach dem Element e1 via find(Key key) gesucht und mit die zurück gegebene Position mit p1 überprüft ob diese gleich sind. (AssertEquals) \\
+Als zweites wird mit find() nach einem ungültigen Key gesucht und die zurückgegebene Position darf nicht mit der Position p1 übereinstimmen. (AsserNotEquals)
 
-\subsection{Heading on level 2 (subsection)}
+\subsection{testeAddAndDeletePos}
+Fügt ein Element e1 und e2 hinzu und erstellt eine Position p1 und p2 die auf das erste Element e1 bzw. e2 verweist. Des weiteren wird eine invalide Position PInvalid erstellt\\
+Nun wird mit deletePos das Element e1 an der Position p1 gelöscht.\\
+Danach wird mit überprüft, dass p1 keine Valide Position mehr ist, indem p1 mit PInvalid verglichen wird(AssertEquals). Danach wird noch überprüft ob die Position p2 mit Element e2 valide ist (AssertEquals)
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-\begin{align}
-A = 
-\begin{bmatrix}
-A_{11} & A_{21} \\
-A_{21} & A_{22}
-\end{bmatrix}
-\end{align}
-Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+\subsection{testeAddAndDeleteKey}
+Fügt ein Element e1 mit einem Key k1 hinzu. Des weiteren wird eine invalide Position PInvalid erstellt\\
+Als erstes wird überprüft ob Position von e1 valide ist. Danach wird deleteKey(k1) ausgeführt und nun wird überprüft ob die nun mit find zurückgegebene Position invalide ist.
 
-%------------------------------------------------
+\subsection{testeAddAndRetrieve}
+Fügt ein Element e1 mit einem Key k1 hinzu. Ein weiteres Element e2 mit dem Key k2 wird erstellt.\\
+Mittels retrieve und find lassen wir uns nun das Element e1 mit dem Key k1 wieder ausgeben und vergleichen dieses anhand des Keys k1 mit dem am Anfang erstellten Key.
 
-\subsubsection{Heading on level 3 (subsubsection)}
+\subsection{testeUnify}
+Erstellt zwei Sets mit 10 und 20 Elementen.\\
+Beide Sets werden mit Unify zu einem neuen Set vereint und dieses muss nun eine size von 30 haben.(AssertEquals)
 
-\lipsum[3] % Dummy text
+\section{Auswertung Quantitative Tests}
 
-\paragraph{Heading on level 4 (paragraph)}
 
-\lipsum[6] % Dummy text
-
-%----------------------------------------------------------------------------------------
-%	PROBLEM 2
-%----------------------------------------------------------------------------------------
-
-\section{Lists}
-
-%------------------------------------------------
-
-\subsection{Example of list (3*itemize)}
-\begin{itemize}
-	\item First item in a list 
-		\begin{itemize}
-		\item First item in a list 
-			\begin{itemize}
-			\item First item in a list 
-			\item Second item in a list 
-			\end{itemize}
-		\item Second item in a list 
-		\end{itemize}
-	\item Second item in a list 
-\end{itemize}
-
-%------------------------------------------------
-
-\subsection{Example of list (enumerate)}
-\begin{enumerate}
-\item First item in a list 
-\item Second item in a list 
-\item Third item in a list
-\end{enumerate}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}
