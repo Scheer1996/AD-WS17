@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.18)  18 OCT 2017 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.19)  19 OCT 2017 03:42
 entering extended mode
 **./ADP_Aufgabe2aktuell.tex
 (ADP_Aufgabe2aktuell.tex
@@ -821,86 +821,172 @@ File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count102
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
 (ADP_Aufgabe2aktuell.aux)
 \openout1 = `ADP_Aufgabe2aktuell.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 67.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 68.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 68.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fourier\fmlfutm.fd"
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 67.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 67.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 68.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 68.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fourier\fmsfutm.fd"
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 67.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 67.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 68.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 68.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fourier\fmxfutm.fd"
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 67.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 68.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 67.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 68.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fourier\t1futs.fd"
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 73.
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen115
+\scratchbox=\box30
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen116
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks29
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 74.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 73
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 74
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fourier\fmlfutmi.fd"
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 73.
+(Font)              scaled to size 13.24796pt on input line 74.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 73.
+(Font)              scaled to size 9.19998pt on input line 74.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 73.
+(Font)              scaled to size 7.35999pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 73.
+(Font)              scaled to size 13.24796pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 73.
+(Font)              scaled to size 9.19998pt on input line 74.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 73.
-LaTeX Font Info:    Try loading font information for U+msa on input line 73.
+(Font)              scaled to size 7.35999pt on input line 74.
+LaTeX Font Info:    Try loading font information for U+msa on input line 74.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 73.
+LaTeX Font Info:    Try loading font information for U+msb on input line 74.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -908,19 +994,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.73 G
-      etestet wurden drei Implentationen des abstrakten Datentyps Set. Im fo...
+l.74 \section
+             {Vorwort}
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--75
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
 
-Overfull \hbox (0.29628pt too wide) in paragraph at lines 81--85
+Overfull \hbox (0.29628pt too wide) in paragraph at lines 82--86
 \T1/futs/m/n/10.95 prüft, ob das Hinzufü-gen sowie ent-fer-nen von Datenele-men
 ten den eigentlich be-ab-sichtigten
  []
@@ -929,20 +1015,254 @@ ten den eigentlich be-ab-sichtigten
 
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-(ADP_Aufgabe2aktuell.aux) ) 
+Overfull \hbox (4.08603pt too wide) in paragraph at lines 116--117
+\T1/futs/m/n/10.95 ple-men-ta-tion machen zu kön-nen wer-den zwei
+ []
+
+
+Overfull \hbox (2.65155pt too wide) in paragraph at lines 116--117
+\T1/futs/m/n/10.95 Da diese un-ter-schiedlich umge-setzt sind, wer-
+ []
+
+
+Overfull \hbox (0.82298pt too wide) in paragraph at lines 116--117
+\T1/futs/m/n/10.95 den de-mentsprechend auch un-ter-schiedliche
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.118 ...e SetgrÃ¶ÃŸen werden dabei verwendet: 10^
+                                                  {k} : k = \left\lbrace 1, ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 118.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 118.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 118.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 118.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 118.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 118.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.119 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (6.58255pt too wide) in paragraph at lines 118--119
+[]\T1/futs/m/n/10.95 Umgesetzt wurde wird dies mit einem Counter.
+ []
+
+
+Overfull \hbox (1.22801pt too wide) in paragraph at lines 118--119
+\T1/futs/m/n/10.95 'while'-Schleifen geachtet, da diese bei gröÿer
+ []
+
+
+Overfull \hbox (3.648pt too wide) in paragraph at lines 118--119
+\T1/futs/m/n/10.95 ter-suchung im-mer weiter ex-po-nen-tiell er-höht.
+ []
+
+
+Overfull \hbox (1.28278pt too wide) in paragraph at lines 118--119
+\T1/futs/m/n/10.95 Fol-gende Set-gröÿen wer-den dabei ver-wen-det:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+<grafiken/DeleteKey-ArrayList.png, id=9, 285.31593pt x 228.10219pt>
+File: grafiken/DeleteKey-ArrayList.png Graphic file (type png)
+
+<use grafiken/DeleteKey-ArrayList.png>
+Package pdftex.def Info: grafiken/DeleteKey-ArrayList.png used on input line 12
+3.
+(pdftex.def)             Requested size: 199.16928pt x 159.2284pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--124
+[]\T1/futs/m/n/10.95 'DeleteKey' bei Ar-rayList ver-
+ []
+
+
+Overfull \hbox (4.09694pt too wide) in paragraph at lines 128--130
+\T1/futs/m/n/10.95 zahl der nöti-gen Op-er-a-tio-nen ex-po-nen-tiell mit
+ []
+
+
+Overfull \hbox (3.65898pt too wide) in paragraph at lines 128--130
+\T1/futs/m/n/10.95 müssen auch gemacht wer-den plus Sieben Ba-
+ []
+
+
+Overfull \hbox (18.33195pt too wide) in paragraph at lines 128--130
+\T1/futs/m/n/10.95 griff-s-rechen-leis-tung keine Ab-we-ichun-gen nimmt,
+ []
+
+
+Overfull \hbox (3.1552pt too wide) in paragraph at lines 128--130
+\T1/futs/m/n/10.95 wenn vorne, hin-ten, oder in der Mitte der Liste
+ []
+
+<grafiken/DeleteKey-DoubleLinkedSet.png, id=10, 285.31593pt x 228.855pt>
+File: grafiken/DeleteKey-DoubleLinkedSet.png Graphic file (type png)
+
+<use grafiken/DeleteKey-DoubleLinkedSet.png>
+Package pdftex.def Info: grafiken/DeleteKey-DoubleLinkedSet.png used on input l
+ine 133.
+(pdftex.def)             Requested size: 199.16928pt x 159.7539pt.
+
+Overfull \hbox (8.7069pt too wide) in paragraph at lines 137--138
+\T1/futs/m/n/10.95 op-ti-male Zu-griff-spunkte auf das Ar-ray des Dou-
+ []
+
+
+Overfull \hbox (3.69543pt too wide) in paragraph at lines 137--138
+\T1/futs/m/n/10.95 bleLinked-Set. Der schlimm-ste Fall ver-hält sich
+ []
+
+
+Overfull \hbox (6.11171pt too wide) in paragraph at lines 137--138
+\T1/futs/m/n/10.95 genauso wie die Im-ple-men-ta-tion der Ar-rayList.
+ []
+
+
+Overfull \hbox (0.65863pt too wide) in paragraph at lines 137--138
+\T1/futs/m/n/10.95 let-zter Po-si-tion, wo die An-zahl der Zu-griff-sop-
+ []
+
+
+Overfull \hbox (2.23546pt too wide) in paragraph at lines 137--138
+\T1/futs/m/n/10.95 er-a-tio-nen, un-ab-hängig von der Set-gröÿe, kon-
+ []
+
+[3
+
+ <./grafiken/DeleteKey-ArrayList.png> <./grafiken/DeleteKey-DoubleLinkedSet.png
+>] <grafiken/DeleteKey-HeapList.png, id=16, 285.31593pt x 228.855pt>
+File: grafiken/DeleteKey-HeapList.png Graphic file (type png)
+
+<use grafiken/DeleteKey-HeapList.png>
+Package pdftex.def Info: grafiken/DeleteKey-HeapList.png used on input line 142
+.
+(pdftex.def)             Requested size: 199.16928pt x 159.7539pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
+[]\T1/futs/m/n/10.95 'DeleteKey' bei HeapList ver-
+ []
+
+
+Overfull \hbox (0.58571pt too wide) in paragraph at lines 146--148
+\T1/futs/m/n/10.95 DoubleLinkedSet. Mit dem Un-ter-schied, dass
+ []
+
+<grafiken/DeletePos-ArrayList.png, id=17, 285.31593pt x 228.855pt>
+File: grafiken/DeletePos-ArrayList.png Graphic file (type png)
+
+<use grafiken/DeletePos-ArrayList.png>
+Package pdftex.def Info: grafiken/DeletePos-ArrayList.png used on input line 15
+2.
+(pdftex.def)             Requested size: 199.16928pt x 159.7539pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+[]\T1/futs/m/n/10.95 'DeletePos' bei Ar-rayList ver-
+ []
+
+
+Overfull \hbox (2.66249pt too wide) in paragraph at lines 157--158
+[]\T1/futs/m/n/10.95 Implementationsbedingt bi-etet DeletePos aus
+ []
+
+
+Overfull \hbox (4.9401pt too wide) in paragraph at lines 157--158
+\T1/futs/m/n/10.95 DeleteKey aus 3.1 einen gewis-sen Vorteil, denn
+ []
+
+
+Overfull \hbox (5.08241pt too wide) in paragraph at lines 157--158
+\T1/futs/m/n/10.95 wird, muss nur der Array-Index um die gewisse
+ []
+
+<grafiken/DeletePos-DoubleLinkedSet.png, id=18, 285.31593pt x 228.855pt>
+File: grafiken/DeletePos-DoubleLinkedSet.png Graphic file (type png)
+
+<use grafiken/DeletePos-DoubleLinkedSet.png>
+Package pdftex.def Info: grafiken/DeletePos-DoubleLinkedSet.png used on input l
+ine 161.
+(pdftex.def)             Requested size: 199.16928pt x 159.7539pt.
+
+Underfull \hbox (badness 1122) in paragraph at lines 162--162
+[]\T1/futs/m/n/10.95 'DeletePos' bei Dou-bleLinked-Set
+ []
+
+
+Overfull \hbox (0.28636pt too wide) in paragraph at lines 165--166
+[]\T1/futs/m/n/10.95 Beim Löschen eines El-e-mentes aus dem Dou-
+ []
+
+
+Overfull \hbox (0.10019pt too wide) in paragraph at lines 165--166
+\T1/futs/m/n/10.95 bleLinked-Set mithilfe eines Po-si-tion-sob-jek-tes
+ []
+
+[4 <./grafiken/DeleteKey-HeapList.png> <./grafiken/DeletePos-ArrayList.png> <./
+grafiken/DeletePos-DoubleLinkedSet.png>]
+<grafiken/DeletePos-HeapList.png, id=22, 285.31593pt x 228.855pt>
+File: grafiken/DeletePos-HeapList.png Graphic file (type png)
+
+<use grafiken/DeletePos-HeapList.png>
+Package pdftex.def Info: grafiken/DeletePos-HeapList.png used on input line 169
+.
+(pdftex.def)             Requested size: 199.16928pt x 159.7539pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--170
+[]\T1/futs/m/n/10.95 'DeletePos' bei HeapList ver-
+ []
+
+
+Overfull \hbox (0.65863pt too wide) in paragraph at lines 173--174
+[]\T1/futs/m/n/10.95 Ähnlich wie bei bei dem Dou-bleLinked-Set der
+ []
+
+
+Overfull \hbox (0.9762pt too wide) in paragraph at lines 173--174
+\T1/futs/m/n/10.95 wach-sende Gröÿe des Sets nimmt keinen Ein-
+ []
+
+[5
+
+ <./grafiken/DeletePos-HeapList.png>] (ADP_Aufgabe2aktuell.aux) ) 
 Here is how much of TeX's memory you used:
- 5156 strings out of 493323
- 77534 string characters out of 3139065
- 323410 words of memory out of 3000000
- 8608 multiletter control sequences out of 15000+200000
- 68080 words of font info for 67 fonts, out of 3000000 for 9000
+ 6528 strings out of 493323
+ 98908 string characters out of 3139036
+ 346998 words of memory out of 3000000
+ 9903 multiletter control sequences out of 15000+200000
+ 89408 words of font info for 99 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,51p,8832b,228s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r
-.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb>
-Output written on ADP_Aufgabe2aktuell.pdf (2 pages, 27046 bytes).
+ 48i,10n,51p,8832b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Fi
+les/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ado
+be/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr
+i8a.pfb>
+Output written on ADP_Aufgabe2aktuell.pdf (5 pages, 75206 bytes).
 PDF statistics:
- 14 PDF objects out of 1000 (max. 8388607)
+ 37 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

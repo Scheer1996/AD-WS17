@@ -33,8 +33,8 @@ public class Application {
 		performanceArrayTestDeleteKey10powX(3);
 		System.out.println("10e4");
 		performanceArrayTestDeleteKey10powX(4);
-		System.out.println("10e5");
-		performanceArrayTestDeleteKey10powX(5);
+//		System.out.println("10e5");
+//		performanceArrayTestDeleteKey10powX(5);
 		
 		System.out.println("DeletePos:");
 		System.out.println("10e1");
@@ -45,8 +45,8 @@ public class Application {
 		performanceArrayTestDeletePos10powX(3);
 		System.out.println("10e4");
 		performanceArrayTestDeletePos10powX(4);
-		System.out.println("10e5");
-		performanceArrayTestDeletePos10powX(5);
+//		System.out.println("10e5");
+//		performanceArrayTestDeletePos10powX(5);
 	}
 	
 	public static void performanceArrayTestDeleteKey10powX(int pow)
@@ -93,8 +93,8 @@ public class Application {
 		performanceDLTestDeleteKey10powX(3);
 		System.out.println("10e4");
 		performanceDLTestDeleteKey10powX(4);
-		System.out.println("10e5");
-		performanceDLTestDeleteKey10powX(5);
+//		System.out.println("10e5");
+//		performanceDLTestDeleteKey10powX(5);
 		
 		System.out.println("DeletePos:");
 		System.out.println("10e1");
@@ -105,8 +105,8 @@ public class Application {
 		performanceDLTestDeletePos10powX(3);
 		System.out.println("10e4");
 		performanceDLTestDeletePos10powX(4);
-		System.out.println("10e5");
-		performanceDLTestDeletePos10powX(5);
+//		System.out.println("10e5");
+//		performanceDLTestDeletePos10powX(5);
 	}
 	
 	public static void performanceDLTestDeleteKey10powX(int pow)
@@ -153,8 +153,8 @@ public class Application {
 		performanceHeapTestDeleteKey10powX(3);
 		System.out.println("10e4");
 		performanceHeapTestDeleteKey10powX(4);
-		System.out.println("10e5");
-		performanceHeapTestDeleteKey10powX(5);
+//		System.out.println("10e5");
+//		performanceHeapTestDeleteKey10powX(5);
 		
 		System.out.println("DeletePos:");
 		System.out.println("10e1");
@@ -165,8 +165,8 @@ public class Application {
 		performanceHeapTestDeletePos10powX(3);
 		System.out.println("10e4");
 		performanceHeapTestDeletePos10powX(4);
-		System.out.println("10e5");
-		performanceHeapTestDeletePos10powX(5);
+//		System.out.println("10e5");
+//		performanceHeapTestDeletePos10powX(5);
 	}
 	
 	public static void performanceHeapTestDeleteKey10powX(int pow)

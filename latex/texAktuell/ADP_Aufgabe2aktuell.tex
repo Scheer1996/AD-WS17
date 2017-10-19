@@ -52,6 +52,7 @@
 
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 \title{	
 \normalfont \normalsize 
 \textsc{Hochschule f\"ur Angewandte Wissenschaften Hamburg, Department Informatik} \\ [25pt] % Your university, school and/or department name(s)
@@ -60,7 +61,7 @@
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
-\author{Stefan Subotin, Paul Mathia , Dennis Sentler & Philip Scheer} % Your name
+\author{Stefan Subotin, Paul Mathia, Dennis Sentler & Philip Scheer} % Your name
 
 \date{\normalsize\today} % Today's date or a custom date
 
@@ -70,8 +71,8 @@
 %----------------------------------------------------------------------------------------
 %	PROBLEM 1
 %----------------------------------------------------------------------------------------
-Getestet wurden drei Implentationen des abstrakten Datentyps Set. Im folgenden betrachten wir die Implentationen ArrayList, DoubleLinkedSet und HeapList, die über eine Schnittstelle Set,
-auf Effizienz sowie Vor- und Nachteile getestet wurden. Durch Verifikations- und Quantitative Tests werden diese drei Implementationen gegeneinander verglichen und auf Effizienz analysiert.\newline
+\section{Vorwort}
+Getestet wurden drei Implementationen des abstrakten Datentyps Set. Im folgenden betrachten wir die Implementationen ArrayList, DoubleLinkedSet und HeapList, die über eine Schnittstelle Set, auf Effizienz sowie Vor- und Nachteile getestet wurden. Durch Verifikations- und Quantitative Tests werden diese drei Implementationen gegeneinander verglichen und auf Effizienz analysiert.\\
 
 
 \section{Dokumentation der Tests}
@@ -107,10 +108,68 @@ ohne spezielle oder unerwartete Vorkommnisse ab.
 \subsection{testeUnify}
 Die Vereinigungsmenge einer (nicht notwendigerweise nichtleeren) Menge U von Mengen ist die Menge der Objekte, die in mindestens einem Element von U enthalten sind.
 Die mathematische Richtigkeit wurde in unserem Fall eingehalten, sodass zwei Mengen die über die unify() Methode vereinigt wurden nach ihrer Vereinigung keine Duplikate enthielten und die size()Methode 
-den richtigen Wert der neu erzeugten Menge lieferte.  
-
+den richtigen Wert der neu erzeugten Menge lieferte.
+\newpage
+\twocolumn
 \section{Auswertung Quantitative Tests}
+\subsection{Vorgehensweise}
+Um eine Aussage über die Effizienz der Implementation machen zu können werden zwei Lösch-Operationen mit einander verglichen. Da diese unterschiedlich umgesetzt sind, werden dementsprechend auch unterschiedliche Ergebnisse erwartet.\\
 
+Umgesetzt wurde wird dies mit einem Counter. Ein Objekt dieser Klasse zählt, speichert und gibt das Resultat aus. Das Inkrementieren des Counters wird nach jedem Rechenschritt vollzogen. Dabei wurde besonders auf 'for'- und 'while'-Schleifen geachtet, da diese bei größer werdenden Sets eine ausschlaggebende Rolle spielen. Die Größe des Sets wird für die Untersuchung immer weiter exponentiell erhöht. Folgende Setgrößen werden dabei verwendet: 10^{k} : k = \left\lbrace 1, ..., 5\right\rbrace .\\
 
+\subsection{DeleteKey}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=7cm]{grafiken/DeleteKey-ArrayList.png}
+		\caption{'DeleteKey' bei ArrayList verschiedener Größe}
+	\end{center}
+\end{figure}
+\newpage
+An Abbildung 3.1 erkennt man, dass die Anzahl der nötigen Operationen exponentiell mit dem Wachstum des Sets ansteigt. So groß, wie das Set ist, genau so viele Operationen müssen auch gemacht werden plus Sieben Basisoperationen die immer gemacht werden.\\ 
+Was man ebenfalls erkennt ist, dass die Zugriffsrechenleistung keine Abweichungen nimmt, wenn vorne, hinten, oder in der Mitte der Liste in Element gelöscht wird.  
 
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=7cm]{grafiken/DeleteKey-DoubleLinkedSet.png}
+		\caption{'DeleteKey' bei DoubleLinkedSet verschiedener Größe}
+	\end{center}
+\end{figure}
+Das DoubleLinkedSet, in der Abbildung 3.2, verhält sich allerdings anders, im Gegensatz zur ArrayList existieren optimale und weniger optimale Zugriffspunkte auf das Array des DoubleLinkedSet. Der schlimmste Fall verhält sich genauso wie die Implementation der ArrayList. Der optimale Zugriffspunkt befindet sich an letzter Position, wo die Anzahl der Zugriffsoperationen, unabhängig von der Setgröße, konstant bei Vier bleibt.
+\newpage
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=7cm]{grafiken/DeleteKey-HeapList.png}
+		\caption{'DeleteKey' bei HeapList verschiedener Größe}
+	\end{center}
+\end{figure}
+Die Analyse des Verhaltens der HeapList aus der Abbildung 3.3 zeigt ein ähnliches Verhalten wie beim zuvor angesprochenen\\
+DoubleLinkedSet. Mit dem Unterschied, dass es sich, implementationsabhängig, beim ersten Element in der Liste um das zugriffsleichte Element handelt. 
+
+\subsection{DeletePos}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=7cm]{grafiken/DeletePos-ArrayList.png}
+		\caption{'DeletePos' bei ArrayList verschiedener Größe}
+	\end{center}
+\end{figure}
+\newpage
+Implementationsbedingt bietet DeletePos aus Abb.3.4, gegenüber der getesteten Methode DeleteKey aus 3.1 einen gewissen Vorteil, denn wenn am hinteren Ende des Arrays gelöscht wird, muss nur der Array-Index um die gewisse Anzahl dekrementiert werden. Dieses Vorgehen erfordert keine Suche des Objektes, da die das Objekt durch die Positionsübergabe direkt erreichbar ist.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=7cm]{grafiken/DeletePos-DoubleLinkedSet.png}
+		\caption{'DeletePos' bei DoubleLinkedSet verschiedener Größe}
+	\end{center}
+\end{figure}
+Beim Löschen eines Elementes aus dem DoubleLinkedSet mithilfe eines Positionsobjektes wird, wie man in Abb. 3.5 sehen kann, kein Mehraufwand durch die Größe des Sets produziert. Da keine Suche nach dem Element betrieben wird, kann es durch das Umlinken der Indexwerte der benachbarten Elemente sehr effektiv gelöscht werden.
+\newpage
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=7cm]{grafiken/DeletePos-HeapList.png}
+		\caption{'DeletePos' bei HeapList verschiedener Größe}
+	\end{center}
+\end{figure}
+Ähnlich wie bei bei dem DoubleLinkedSet der Abb. 3.5 ist bei der HeapList ein genauso effektives Entfernen der Elemente möglich, die wachsende Größe des Sets nimmt keinen Einfluss auf das Entfernen mithilfe des Positionsobjektes.  
+\onecolumn
 \end{document}
